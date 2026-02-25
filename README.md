@@ -47,6 +47,47 @@ cat guides/greenhouse.md
 cat guides/companies/DDOG.md
 ```
 
+## LLM Skill Import and Usage
+
+Use the `sp500-career-apply` skill for end-to-end job application automation (company selection, ATS routing, filters, fields, and apply packet generation).
+
+### Codex skill import
+
+```bash
+mkdir -p ~/.codex/skills/public
+cp -R skills/sp500-career-apply ~/.codex/skills/public/
+```
+
+In Codex chat, ask to use `sp500-career-apply`.
+
+### Claude Code style usage
+
+Read and follow:
+
+- `skills/sp500-career-apply/SKILL.md`
+
+Run helper scripts:
+
+```bash
+# Filter target companies
+node skills/sp500-career-apply/scripts/query_companies.mjs --ats workday --limit 20
+
+# Build one-company apply packet
+node skills/sp500-career-apply/scripts/build_apply_packet.mjs --ticker MSFT
+```
+
+### Canonical dataset for all agents
+
+Primary runtime dataset:
+
+- `data/llm-careers-dataset.json`
+
+Refresh it after crawl updates:
+
+```bash
+npm run llm-data
+```
+
 ## Data Structure
 
 ```
