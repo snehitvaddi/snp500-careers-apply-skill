@@ -1,6 +1,11 @@
 {
   "platform": "lever",
-  "slugs": [],
-  "notes": "No S&P 500 IT companies currently use Lever as their primary ATS. Many have migrated to Greenhouse or Workday. This file is maintained as a placeholder for future additions.",
-  "generated": "2026-02-25"
+  "slugs": [
+    {
+      "slug": "palantir",
+      "ticker": "PLTR",
+      "name": "Palantir Technologies Inc."
+    }
+  ],
+  "generated": "2026-03-01"
 }
